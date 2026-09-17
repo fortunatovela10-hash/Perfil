@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Meu Perfil Digital Completo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212; 
+            color: #e0e0e0; 
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #1e1e1e; 
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .foto-perfil {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #00ff88;
+            transition: transform 0.3s ease;
+        }
+        .foto-perfil:hover {
+            transform: scale(1.05);
+        }
+        h1 {
+            color: #00ff88; 
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        .subtitulo {
+            color: #aaa;
+            font-style: italic;
+            margin-top: 0;
+        }
+        h2 {
+            border-bottom: 2px solid #00ff88;
+            padding-bottom: 5px;
+            color: #cfcfcf;
+            margin-top: 25px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .Lista-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .botao-link {
+            display: block;
+            text-align: center;
+            background: #2a2a2a;
+            color: #00ff88;
+            padding: 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #00ff88;
+            transition: all 0.3s ease;
+        }
+        .botao-link:hover {
+            background: #00ff88;
+            color: #121212;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+
+        /* NOVO: Estilos do Formulário de Contacto */
+        .grupo-formulario {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #aaa;
+            font-size: 0.9em;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #444;
+            background-color: #2a2a2a;
+            color: #fff;
+            font-family: inherit;
+            box-sizing: border-box; /* Garante que o padding não quebra a largura */
+        }
+        input:focus, textarea:focus {
+            border-color: #00ff88;
+            outline: none; /* Remove a borda padrão azul do navegador */
+        }
+        .botao-enviar {
+            width: 100%;
+            background: #00ff88;
+            color: #121212;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .botao-enviar:hover {
+            background: #00cc6e;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="foto.jpg" alt="A minha Foto de Perfil" class="foto-perfil">
+        <h1>Olá, eu sou o [O Seu Nome Aqui]!</h1>
+        <p class="subtitulo">Futuro Desenvolvedor Web</p>
+    </header>
+
+    <main>
+        <h2>Sobre Mim</h2>
+        <p>Sou entusiasta de tecnologia e estou a construir esta página do zero para consolidar os meus conhecimentos em HTML e CSS.</p>
+
+        <h2>As Minhas Redes</h2>
+        <div class="Lista-links">
+            <a href="https://github.com" target="_blank" class="botao-link">🌐 GitHub</a>
+            <a href="https://instagram.com" target="_blank" class="botao-link">📸 Instagram</a>
+        </div>
+
+        <!-- NOVO: Secção do Formulário de Contacto -->
+        <h2>Deixe uma Mensagem</h2>
+        <form action="#" method="POST">
+            <div class="grupo-formulario">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="O seu nome..." required>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="O seu e-mail..." required>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva aqui a sua mensagem..." required></textarea>
+            </div>
+
+            <button type="submit" class="botao-enviar">✉️ Enviar Mensagem</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Criado com 💚 por [O Seu Nome Aqui]</p>
+    </footer>
+
+</body>
+</html>
