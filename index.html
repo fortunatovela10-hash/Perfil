@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil Digital | Fortunato</title>
+    <title>Perfil Digital | Fortunato vela</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -62,6 +62,13 @@
         li {
             margin-bottom: 8px;
         }
+        .destaque-barca {
+            color: #ffed00;
+            background: linear-gradient(90deg, #a50044, #004d98);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
         .Lista-links {
             display: flex;
             flex-direction: column;
@@ -86,8 +93,6 @@
             box-shadow: 0 0 15px rgba(0, 210, 255, 0.6);
             transform: translateY(-2px);
         }
-        
-        /* Estilos específicos para os botões de música */
         .area-musica {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -123,7 +128,6 @@
             color: #fff;
             box-shadow: 0 0 15px rgba(112, 161, 255, 0.5);
         }
-        
         .grupo-formulario {
             margin-bottom: 15px;
         }
@@ -165,6 +169,21 @@
             background: #00b4db;
             box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
         }
+        
+        /* Estilo do Contador de Visitas */
+        .contador-container {
+            margin-top: 25px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .contador-container img {
+            margin-top: 5px;
+            border-radius: 4px;
+        }
+
         footer {
             text-align: center;
             margin-top: 40px;
@@ -184,7 +203,8 @@
 
         <main>
             <h2>Sobre Mim</h2>
-            <p>Sou fascinado pelo mundo da tecnologia e pela criação de soluções digitais. Atualmente, estou a dar os meus primeiros passos na programação front-end, aprendendo a estruturar e a estilizar páginas web modernas com HTML5 e CSS3.</p>
+            <!-- Atualizado com a sua equipa favorita -->
+            <p>Sou fascinado pelo mundo da tecnologia e pela criação de soluções digitais. Atualmente, estou a dar os meus primeiros passos na programação front-end, aprendendo a estruturar e a estilizar páginas web modernas com HTML5 e CSS3. Fora do mundo digital, sou um grande adepto do futebol e a minha equipa favorita é o <span class="destaque-barca">FC Barcelona</span>! ⚽🔵🔴</p>
 
             <h2>Os Meus Objetivos</h2>
             <ul>
@@ -193,7 +213,6 @@
                 <li>Partilhar a minha evolução com a comunidade.</li>
             </ul>
 
-            <!-- Secção de Mídia: Duas Músicas Unidas Lado a Lado -->
             <h2>As Minhas Recomendações Musicais</h2>
             <p style="color: #aaa; font-size: 0.9em; margin-bottom: 10px;">Escolha o estilo de som que prefere ouvir enquanto visita a minha página:</p>
             <div class="area-musica">
@@ -228,6 +247,12 @@
                 </div>
                 <button type="submit" class="botao-enviar">✉️ Enviar Mensagem</button>
             </form>
+
+            <!-- NOVO: Contador de Visitas Real -->
+            <div class="contador-container">
+                <span style="font-size: 0.85em; color: #aaa; display: block;">Visualizações da Página:</span>
+                <img src="https://glitch.me" alt="Contador de Visitas">
+            </div>
         </main>
 
         <footer>
@@ -237,3 +262,4 @@
 
 </body>
 </html>
+
