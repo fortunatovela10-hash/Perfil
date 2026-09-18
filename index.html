@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Meu Perfil Digital Completo</title>
+    <title>Perfil Digital | Fortunato</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212; 
+            background: linear-gradient(135deg, #121212 0%, #0d1b2a 100%);
             color: #e0e0e0; 
             max-width: 600px;
             margin: 40px auto;
             padding: 20px;
-            background: #1e1e1e; 
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+            background-attachment: fixed;
+        }
+        .cartao-perfil {
+            background: rgba(30, 30, 30, 0.75); 
+            backdrop-filter: blur(10px); 
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 210, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
         header {
             text-align: center;
@@ -25,16 +31,19 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #00ff88;
-            transition: transform 0.3s ease;
+            border: 3px solid #00d2ff; 
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
         }
         .foto-perfil:hover {
-            transform: scale(1.05);
+            transform: scale(1.05) rotate(3deg);
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.6);
         }
         h1 {
-            color: #00ff88; 
+            color: #00d2ff; 
             margin-top: 15px;
             margin-bottom: 5px;
+            text-shadow: 0 0 8px rgba(0, 210, 255, 0.3);
         }
         .subtitulo {
             color: #aaa;
@@ -42,7 +51,7 @@
             margin-top: 0;
         }
         h2 {
-            border-bottom: 2px solid #00ff88;
+            border-bottom: 2px solid #00d2ff;
             padding-bottom: 5px;
             color: #cfcfcf;
             margin-top: 25px;
@@ -62,22 +71,59 @@
         .botao-link {
             display: block;
             text-align: center;
-            background: #2a2a2a;
-            color: #00ff88;
+            background: rgba(42, 42, 42, 0.8);
+            color: #00d2ff;
             padding: 12px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
-            border: 1px solid #00ff88;
+            border: 1px solid #00d2ff;
             transition: all 0.3s ease;
         }
         .botao-link:hover {
-            background: #00ff88;
+            background: #00d2ff;
             color: #121212;
-            box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.6);
+            transform: translateY(-2px);
         }
-
-        /* NOVO: Estilos do Formulário de Contacto */
+        
+        /* Estilos específicos para os botões de música */
+        .area-musica {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .botao-musica {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .musica-lofi {
+            background: rgba(255, 71, 87, 0.1);
+            border: 1px solid #ff4757;
+            color: #ff4757;
+        }
+        .musica-lofi:hover {
+            background: #ff4757;
+            color: #fff;
+            box-shadow: 0 0 15px rgba(255, 71, 87, 0.5);
+        }
+        .musica-coldplay {
+            background: rgba(112, 161, 255, 0.1);
+            border: 1px solid #70a1ff;
+            color: #70a1ff;
+        }
+        .musica-coldplay:hover {
+            background: #70a1ff;
+            color: #fff;
+            box-shadow: 0 0 15px rgba(112, 161, 255, 0.5);
+        }
+        
         .grupo-formulario {
             margin-bottom: 15px;
         }
@@ -97,27 +143,28 @@
             background-color: #2a2a2a;
             color: #fff;
             font-family: inherit;
-            box-sizing: border-box; /* Garante que o padding não quebra a largura */
+            box-sizing: border-box;
         }
         input:focus, textarea:focus {
-            border-color: #00ff88;
-            outline: none; /* Remove a borda padrão azul do navegador */
+            border-color: #00d2ff;
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 210, 255, 0.4);
         }
         .botao-enviar {
             width: 100%;
-            background: #00ff88;
+            background: #00d2ff;
             color: #121212;
             padding: 12px;
             border: none;
             border-radius: 6px;
             font-weight: bold;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
         }
         .botao-enviar:hover {
-            background: #00cc6e;
+            background: #00b4db;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
         }
-        
         footer {
             text-align: center;
             margin-top: 40px;
@@ -128,47 +175,65 @@
 </head>
 <body>
 
-    <header>
-        <img src="foto.jpg" alt="A minha Foto de Perfil" class="foto-perfil">
-        <h1>Olá, eu sou o [O Seu Nome Aqui]!</h1>
-        <p class="subtitulo">Futuro Desenvolvedor Web</p>
-    </header>
+    <div class="cartao-perfil">
+        <header>
+            <img src="foto.jpg" alt="A minha Foto de Perfil" class="foto-perfil">
+            <h1>Olá, eu sou o Fortunato!</h1>
+            <p class="subtitulo">Estudante & Futuro Desenvolvedor Web</p>
+        </header>
 
-    <main>
-        <h2>Sobre Mim</h2>
-        <p>Sou entusiasta de tecnologia e estou a construir esta página do zero para consolidar os meus conhecimentos em HTML e CSS.</p>
+        <main>
+            <h2>Sobre Mim</h2>
+            <p>Sou fascinado pelo mundo da tecnologia e pela criação de soluções digitais. Atualmente, estou a dar os meus primeiros passos na programação front-end, aprendendo a estruturar e a estilizar páginas web modernas com HTML5 e CSS3.</p>
 
-        <h2>As Minhas Redes</h2>
-        <div class="Lista-links">
-            <a href="https://github.com" target="_blank" class="botao-link">🌐 GitHub</a>
-            <a href="https://instagram.com" target="_blank" class="botao-link">📸 Instagram</a>
-        </div>
+            <h2>Os Meus Objetivos</h2>
+            <ul>
+                <li>Dominar o Desenvolvimento Web Avançado.</li>
+                <li>Criar projetos interativos e dinâmicos.</li>
+                <li>Partilhar a minha evolução com a comunidade.</li>
+            </ul>
 
-        <!-- NOVO: Secção do Formulário de Contacto -->
-        <h2>Deixe uma Mensagem</h2>
-        <form action="#" method="POST">
-            <div class="grupo-formulario">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" placeholder="O seu nome..." required>
+            <!-- Secção de Mídia: Duas Músicas Unidas Lado a Lado -->
+            <h2>As Minhas Recomendações Musicais</h2>
+            <p style="color: #aaa; font-size: 0.9em; margin-bottom: 10px;">Escolha o estilo de som que prefere ouvir enquanto visita a minha página:</p>
+            <div class="area-musica">
+                <a href="https://youtube.com" target="_blank" class="botao-musica musica-lofi">
+                    🎧 Som de Foco (Lofi)
+                </a>
+                <a href="https://youtube.com" target="_blank" class="botao-musica musica-coldplay">
+                    🎵 Coldplay (Pop/Rock)
+                </a>
             </div>
 
-            <div class="grupo-formulario">
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" placeholder="O seu e-mail..." required>
+            <h2>As Minhas Redes e Contactos</h2>
+            <div class="Lista-links">
+                <a href="https://instagram.com" target="_blank" class="botao-link">📸 Seguir no Instagram (@fortunato10)</a>
+                <a href="https://github.com" target="_blank" class="browse-link botao-link">🌐 GitHub (fortunatovela10-hash)</a>
+                <a href="mailto:fortunatovela10@gmail.com" class="botao-link">✉️ Enviar E-mail</a>
             </div>
 
-            <div class="grupo-formulario">
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva aqui a sua mensagem..." required></textarea>
-            </div>
+            <h2>Deixe uma Mensagem</h2>
+            <form action="https://formspree.io" method="POST">
+                <div class="grupo-formulario">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="O seu nome..." required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="O seu e-mail..." required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva aqui a sua mensagem..." required></textarea>
+                </div>
+                <button type="submit" class="botao-enviar">✉️ Enviar Mensagem</button>
+            </form>
+        </main>
 
-            <button type="submit" class="botao-enviar">✉️ Enviar Mensagem</button>
-        </form>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 - Criado com 💚 por [O Seu Nome Aqui]</p>
-    </footer>
+        <footer>
+            <p>&copy; 2026 - Criado com 💙 por Fortunato</p>
+        </footer>
+    </div>
 
 </body>
 </html>
