@@ -45,11 +45,34 @@
             margin-bottom: 5px;
             text-shadow: 0 0 8px rgba(0, 210, 255, 0.3);
         }
+        
+        /* ANIMAÇÃO DA MÁQUINA DE ESCREVER (LETRAS A DIGITALIZAREM-SE) */
+        .subtitulo-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
         .subtitulo {
             color: #aaa;
             font-style: italic;
-            margin-top: 0;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #00d2ff;
+            font-size: 1.1em;
+            width: 0;
+            animation: digitar 4s steps(35, end) forwards, piscar 0.75s step-end infinite;
         }
+        @keyframes digitar {
+            from { width: 0; }
+            to { width: 100%; max-width: 320px; }
+        }
+        @keyframes piscar {
+            from, to { border-color: transparent; }
+            50% { border-color: #00d2ff; }
+        }
+
         h2 {
             border-bottom: 2px solid #00d2ff;
             padding-bottom: 5px;
@@ -69,6 +92,7 @@
             border-radius: 4px;
             font-weight: bold;
         }
+
         .Lista-links {
             display: flex;
             flex-direction: column;
@@ -128,8 +152,11 @@
             color: #fff;
             box-shadow: 0 0 15px rgba(112, 161, 255, 0.5);
         }
+        
+        /* ESTILO DO FORMULÁRIO ARRUMADO */
         .grupo-formulario {
             margin-bottom: 15px;
+            text-align: left;
         }
         label {
             display: block;
@@ -141,10 +168,10 @@
         input[type="email"],
         textarea {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border-radius: 6px;
             border: 1px solid #444;
-            background-color: #2a2a2a;
+            background-color: #222222; 
             color: #fff;
             font-family: inherit;
             box-sizing: border-box;
@@ -156,20 +183,23 @@
         }
         .botao-enviar {
             width: 100%;
-            background: #00d2ff;
+            background: #00d2ff; 
             color: #121212;
-            padding: 12px;
+            padding: 14px;
             border: none;
             border-radius: 6px;
             font-weight: bold;
+            font-size: 1em;
             cursor: pointer;
             transition: all 0.3s ease;
+            margin-top: 10px;
         }
         .botao-enviar:hover {
             background: #00b4db;
             box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
         }
         
+        /* CONTADOR DE VISITAS */
         .contador-container {
             margin-top: 25px;
             text-align: center;
@@ -196,7 +226,9 @@
         <header>
             <img src="foto.jpg" alt="A minha Foto de Perfil" class="foto-perfil">
             <h1>Olá, eu sou o Fortunato!</h1>
-            <p class="subtitulo">Estudante & Futuro Desenvolvedor Web</p>
+            <div class="subtitulo-container">
+                <p class="subtitulo">Estudante & Futuro Desenvolvedor Web</p>
+            </div>
         </header>
 
         <main>
@@ -225,42 +257,30 @@
             <div class="Lista-links">
                 <a href="https://instagram.com" target="_blank" class="botao-link">📸 Seguir no Instagram (@fortunato10)</a>
                 <a href="https://github.com" target="_blank" class="botao-link">🌐 GitHub (fortunatovela10-hash)</a>
-                <a href="mailto:fortunatovela10@gmail.com" class="botao-link">✉️ Enviar E-mail</a>
+                <!-- ADICIONADO: O teu botão de e-mail agora está listado aqui nas tuas redes de forma fixa -->
+                <a href="mailto:fortunatovela10@gmail.com" class="botao-link">✉️ Enviar E-mail (fortunatovela10@gmail.com)</a>
             </div>
 
             <h2>Deixe uma Mensagem</h2>
-            <!-- Link do Formspree configurado corretamente com método POST em maiúsculas -->
-           <form action="https://formspree.io/f/xbglddza" method="POST">
-
+            <form action="https://formspree.io" method="POST">
                 <div class="grupo-formulario">
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" placeholder="O seu nome..." required>
                 </div>
+                
                 <div class="grupo-formulario">
                     <label for="email">E-mail:</label>
                     <input type="email" id="email" name="email" placeholder="O seu e-mail..." required>
                 </div>
+                
                 <div class="grupo-formulario">
                     <label for="mensagem">Mensagem:</label>
                     <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva aqui a sua mensagem..." required></textarea>
                 </div>
+                
                 <button type="submit" class="botao-enviar">✉️ Enviar Mensagem</button>
             </form>
 
-           <!-- Contador Numérico Dinâmico Corrigido -->
-<div class="contador-container">
-    <span style="font-size: 0.85em; color: #aaa; display: block; margin-bottom: 5px;">Visualizações da Página:</span>
-    <img src="https://getloli.com" alt="Contador de Visitas">
-</div>
-
-        </main>
-
-        <footer>
-            <p>&copy; 2026 - Criado com 💙 por Fortunato</p>
-        </footer>
-    </div>
-
-</body>
-</html>
-
-  
+            <div class="contador-container">
+                <span style="font-size: 0.85em; color: #aaa; display: block;">Visualizações da Página:</span>
+                <img src="https://shields.io" alt="Contador de Visitas">
