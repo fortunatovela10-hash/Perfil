@@ -1,286 +1,1076 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Perfil Digital | Fortunato</title>
+
     <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #121212 0%, #0d1b2a 100%);
-            color: #e0e0e0; 
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 20px;
-            background-attachment: fixed;
+            margin: 0;
+            padding: 40px 20px;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: #e0e0e0;
+            background:
+                linear-gradient(135deg, #121212 0%, #0d1b2a 100%);
+            min-height: 100vh;
         }
+
+        /* CARTÃO PRINCIPAL */
+
         .cartao-perfil {
-            background: rgba(30, 30, 30, 0.75); 
-            backdrop-filter: blur(10px); 
-            border-radius: 16px;
+            max-width: 650px;
+            margin: auto;
             padding: 30px;
-            box-shadow: 0 8px 32px rgba(0, 210, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+
+            background: rgba(30, 30, 30, 0.94);
+
+            border-radius: 18px;
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+            box-shadow:
+                0 10px 40px rgba(0, 210, 255, 0.15);
         }
+
+        /* CABEÇALHO */
+
         header {
             text-align: center;
             margin-bottom: 30px;
         }
+
+        /* FOTO */
+
         .foto-perfil {
             width: 150px;
             height: 150px;
-            border-radius: 50%;
+
             object-fit: cover;
-            border: 3px solid #00d2ff; 
-            transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
-        }
-        .foto-perfil:hover {
-            transform: scale(1.05) rotate(3deg);
-            box-shadow: 0 0 25px rgba(0, 210, 255, 0.6);
-        }
-        h1 {
-            color: #00d2ff; 
-            margin-top: 15px;
-            margin-bottom: 5px;
-            text-shadow: 0 0 8px rgba(0, 210, 255, 0.3);
-        }
-        
-        /* ANIMAÇÃO DA MÁQUINA DE ESCREVER (LETRAS A DIGITALIZAREM-SE) */
-        .subtitulo-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-        .subtitulo {
-            color: #aaa;
-            font-style: italic;
-            margin: 0;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 3px solid #00d2ff;
-            font-size: 1.1em;
-            width: 0;
-            animation: digitar 4s steps(35, end) forwards, piscar 0.75s step-end infinite;
-        }
-        @keyframes digitar {
-            from { width: 0; }
-            to { width: 100%; max-width: 320px; }
-        }
-        @keyframes piscar {
-            from, to { border-color: transparent; }
-            50% { border-color: #00d2ff; }
+
+            border-radius: 50%;
+
+            border: 3px solid #00ff88;
+
+            box-shadow:
+                0 0 20px rgba(0, 255, 136, 0.35);
+
+            transition: 0.3s;
         }
 
-        h2 {
-            border-bottom: 2px solid #00d2ff;
-            padding-bottom: 5px;
-            color: #cfcfcf;
-            margin-top: 25px;
+        .foto-perfil:hover {
+            transform: scale(1.05) rotate(2deg);
+
+            box-shadow:
+                0 0 30px rgba(0, 255, 136, 0.6);
         }
-        ul {
-            padding-left: 20px;
-        }
-        li {
+
+        /* TÍTULO */
+
+        h1 {
+            color: #00ff88;
+
+            margin-top: 18px;
             margin-bottom: 8px;
+
+            text-shadow:
+                0 0 10px rgba(0, 255, 136, 0.3);
         }
+
+        /* TEXTO ANIMADO */
+
+        .subtitulo {
+            color: #aaa;
+
+            font-size: 1.1em;
+
+            font-style: italic;
+
+            display: inline-block;
+
+            white-space: nowrap;
+
+            overflow: hidden;
+
+            border-right: 3px solid #00ff88;
+
+            width: 0;
+
+            animation:
+                escrever 4.5s steps(36, end) 0.8s forwards,
+                cursorPiscar 0.7s step-end infinite;
+
+            max-width: 100%;
+        }
+
+        /* ANIMAÇÃO DE ESCREVER */
+
+        @keyframes escrever {
+
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 36ch;
+            }
+        }
+
+        /* CURSOR A PISCAR */
+
+        @keyframes cursorPiscar {
+
+            0%,
+            100% {
+                border-color: #00ff88;
+            }
+
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        /* TÍTULOS DAS SECÇÕES */
+
+        h2 {
+            color: #d5d5d5;
+
+            border-bottom: 2px solid #00ff88;
+
+            padding-bottom: 7px;
+
+            margin-top: 32px;
+        }
+
+        /* PARÁGRAFOS */
+
+        p {
+            line-height: 1.7;
+        }
+
+        /* BARÇA */
+
         .destaque-barca {
             color: #ffed00;
-            background: linear-gradient(90deg, #a50044, #004d98);
-            padding: 2px 6px;
-            border-radius: 4px;
+
             font-weight: bold;
+
+            padding: 3px 7px;
+
+            border-radius: 5px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #a50044,
+                    #004d98
+                );
         }
+
+        /* GALERIA */
+
+        .galeria-barca {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 14px;
+
+            margin-top: 18px;
+        }
+
+        .barca-card {
+            position: relative;
+
+            min-height: 170px;
+
+            padding: 20px;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            text-decoration: none;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: flex-end;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #a50044,
+                    #004d98
+                );
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            transition: 0.3s;
+        }
+
+        .barca-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.4);
+
+            border-color: #00ff88;
+        }
+
+        .barca-card::before {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(255,255,255,0.25),
+                    transparent 45%
+                );
+        }
+
+        .barca-icon {
+            position: relative;
+
+            font-size: 50px;
+
+            margin-bottom: 10px;
+        }
+
+        .barca-card h3,
+        .barca-card p {
+            position: relative;
+        }
+
+        .barca-card h3 {
+            margin: 0;
+
+            font-size: 18px;
+        }
+
+        .barca-card p {
+            margin: 5px 0 0;
+
+            color: rgba(255,255,255,0.75);
+
+            font-size: 13px;
+        }
+
+        /* BOTÃO SITE OFICIAL */
+
+        .site-oficial {
+            display: block;
+
+            margin-top: 15px;
+
+            padding: 14px;
+
+            text-align: center;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            color: white;
+
+            font-weight: bold;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #a50044,
+                    #004d98
+                );
+
+            border: 1px solid rgba(255,255,255,0.15);
+
+            transition: 0.3s;
+        }
+
+        .site-oficial:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 0 18px rgba(0,255,136,0.3);
+        }
+
+        /* LISTA */
+
+        ul {
+            padding-left: 22px;
+        }
+
+        li {
+            margin-bottom: 10px;
+
+            line-height: 1.5;
+        }
+
+        /* MÚSICA */
+
+        .area-musica {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 10px;
+
+            margin-top: 15px;
+        }
+
+        .botao-musica {
+            padding: 13px;
+
+            border-radius: 7px;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .musica-lofi {
+            color: #ff4757;
+
+            border: 1px solid #ff4757;
+
+            background:
+                rgba(255,71,87,0.1);
+        }
+
+        .musica-lofi:hover {
+            background: #ff4757;
+
+            color: white;
+
+            transform: translateY(-2px);
+        }
+
+        .musica-coldplay {
+            color: #70a1ff;
+
+            border: 1px solid #70a1ff;
+
+            background:
+                rgba(112,161,255,0.1);
+        }
+
+        .musica-coldplay:hover {
+            background: #70a1ff;
+
+            color: white;
+
+            transform: translateY(-2px);
+        }
+
+        /* REDES */
 
         .Lista-links {
             display: flex;
+
             flex-direction: column;
+
             gap: 10px;
+
             margin-top: 15px;
         }
+
         .botao-link {
             display: block;
+
+            padding: 13px;
+
             text-align: center;
-            background: rgba(42, 42, 42, 0.8);
-            color: #00d2ff;
-            padding: 12px;
-            border-radius: 6px;
+
+            color: #00ff88;
+
             text-decoration: none;
+
             font-weight: bold;
-            border: 1px solid #00d2ff;
-            transition: all 0.3s ease;
+
+            border: 1px solid #00ff88;
+
+            border-radius: 7px;
+
+            background:
+                rgba(42,42,42,0.8);
+
+            transition: 0.3s;
         }
+
         .botao-link:hover {
-            background: #00d2ff;
             color: #121212;
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.6);
+
+            background: #00ff88;
+
             transform: translateY(-2px);
+
+            box-shadow:
+                0 0 15px rgba(0,255,136,0.5);
         }
-        .area-musica {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        .botao-musica {
-            display: block;
-            text-align: center;
-            padding: 12px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        .musica-lofi {
-            background: rgba(255, 71, 87, 0.1);
-            border: 1px solid #ff4757;
-            color: #ff4757;
-        }
-        .musica-lofi:hover {
-            background: #ff4757;
-            color: #fff;
-            box-shadow: 0 0 15px rgba(255, 71, 87, 0.5);
-        }
-        .musica-coldplay {
-            background: rgba(112, 161, 255, 0.1);
-            border: 1px solid #70a1ff;
-            color: #70a1ff;
-        }
-        .musica-coldplay:hover {
-            background: #70a1ff;
-            color: #fff;
-            box-shadow: 0 0 15px rgba(112, 161, 255, 0.5);
-        }
-        
-        /* ESTILO DO FORMULÁRIO ARRUMADO */
+
+        /* FORMULÁRIO */
+
         .grupo-formulario {
             margin-bottom: 15px;
-            text-align: left;
         }
+
         label {
             display: block;
-            margin-bottom: 5px;
-            color: #aaa;
-            font-size: 0.9em;
+
+            margin-bottom: 7px;
         }
-        input[type="text"],
-        input[type="email"],
+
+        input,
         textarea {
             width: 100%;
+
             padding: 12px;
-            border-radius: 6px;
+
+            border-radius: 7px;
+
             border: 1px solid #444;
-            background-color: #222222; 
-            color: #fff;
+
+            background: #222;
+
+            color: white;
+
             font-family: inherit;
-            box-sizing: border-box;
+
+            font-size: 15px;
         }
-        input:focus, textarea:focus {
-            border-color: #00d2ff;
+
+        textarea {
+            min-height: 120px;
+
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
             outline: none;
-            box-shadow: 0 0 8px rgba(0, 210, 255, 0.4);
+
+            border-color: #00ff88;
+
+            box-shadow:
+                0 0 8px rgba(0,255,136,0.3);
         }
+
+        /* BOTÃO ENVIAR */
+
         .botao-enviar {
             width: 100%;
-            background: #00d2ff; 
-            color: #121212;
+
             padding: 14px;
+
             border: none;
-            border-radius: 6px;
+
+            border-radius: 7px;
+
+            background: #00ff88;
+
+            color: #121212;
+
+            font-size: 16px;
+
             font-weight: bold;
-            font-size: 1em;
+
             cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 10px;
+
+            transition: 0.3s;
         }
+
         .botao-enviar:hover {
-            background: #00b4db;
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+            background: #00cc6e;
+
+            box-shadow:
+                0 0 15px rgba(0,255,136,0.4);
         }
-        
-        /* CONTADOR DE VISITAS */
+
+        /* CONTADOR */
+
         .contador-container {
-            margin-top: 25px;
+            margin-top: 30px;
+
+            padding: 22px;
+
             text-align: center;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+
+            border-radius: 12px;
+
+            background:
+                rgba(0,0,0,0.35);
+
+            border:
+                1px solid rgba(0,255,136,0.15);
         }
-        .contador-container img {
+
+        .contador-titulo {
+            color: #aaa;
+
+            font-size: 15px;
+
+            margin-bottom: 10px;
+        }
+
+        #contador {
+            color: #00ff88;
+
+            font-size: 42px;
+
+            font-weight: bold;
+
+            letter-spacing: 5px;
+
+            text-shadow:
+                0 0 12px rgba(0,255,136,0.5);
+        }
+
+        .contador-info {
             margin-top: 8px;
+
+            color: #666;
+
+            font-size: 12px;
         }
+
+        /* RODAPÉ */
 
         footer {
             text-align: center;
+
             margin-top: 40px;
-            font-size: 0.9em;
+
             color: #777;
+
+            font-size: 14px;
         }
+
+        /* TELEMÓVEL */
+
+        @media (max-width: 520px) {
+
+            body {
+                padding: 15px 10px;
+            }
+
+            .cartao-perfil {
+                padding: 20px;
+            }
+
+            .galeria-barca,
+            .area-musica {
+                grid-template-columns: 1fr;
+            }
+
+            .foto-perfil {
+                width: 130px;
+                height: 130px;
+            }
+
+            .subtitulo {
+                font-size: 0.95em;
+
+                white-space: normal;
+
+                width: auto;
+
+                animation: none;
+
+                border-right: none;
+
+                color: #00ff88;
+            }
+        }
+
     </style>
 </head>
+
+
 <body>
 
     <div class="cartao-perfil">
+
+        <!-- CABEÇALHO -->
+
         <header>
-            <img src="foto.jpg" alt="A minha Foto de Perfil" class="foto-perfil">
-            <h1>Olá, eu sou o Fortunato!</h1>
-            <div class="subtitulo-container">
-                <p class="subtitulo">Estudante & Futuro Desenvolvedor Web</p>
-            </div>
+
+            <img
+                src="foto.jpg"
+                alt="Foto de perfil do Fortunato"
+                class="foto-perfil"
+            >
+
+            <h1>
+                Olá, eu sou o Fortunato!
+            </h1>
+
+            <!-- TEXTO ANIMADO -->
+
+            <p class="subtitulo">
+                Estudante &amp; Futuro Desenvolvedor Web
+            </p>
+
         </header>
 
-        <main>
-            <h2>Sobre Mim</h2>
-            <p>Sou fascinado pelo mundo da tecnologia e pela criação de soluções digitais. Atualmente, estou a dar os meus primeiros passos na programação front-end, aprendendo a estruturar e a estilizar páginas web modernas com HTML5 e CSS3. Fora do mundo digital, sou um grande adepto do futebol e a minha equipa favorita é o <span class="destaque-barca">FC Barcelona</span>! ⚽🔵🔴</p>
 
-            <h2>Os Meus Objetivos</h2>
+        <main>
+
+            <!-- SOBRE MIM -->
+
+            <h2>
+                Sobre Mim
+            </h2>
+
+            <p>
+                Sou fascinado pelo mundo da tecnologia
+                e pela criação de soluções digitais.
+            </p>
+
+            <p>
+                Atualmente, estou a dar os meus primeiros
+                passos na programação front-end, aprendendo
+                HTML5, CSS3 e JavaScript.
+            </p>
+
+            <p>
+                Fora do mundo digital, sou um grande adepto
+                do futebol e a minha equipa favorita é
+                <span class="destaque-barca">
+                    FC Barcelona
+                </span>
+                ⚽🔵🔴
+            </p>
+
+
+            <!-- BARCELONA -->
+
+            <h2>
+                🔵🔴 O Meu Clube do Coração
+            </h2>
+
+            <p>
+                Consulta as páginas oficiais do FC Barcelona:
+            </p>
+
+
+            <div class="galeria-barca">
+
+                <a
+                    class="barca-card"
+                    href="https://www.fcbarcelona.com/en/club/identitat/escut"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <div class="barca-icon">
+                        🛡️
+                    </div>
+
+                    <h3>
+                        Emblema do Barça
+                    </h3>
+
+                    <p>
+                        Ver o emblema no site oficial
+                    </p>
+
+                </a>
+
+
+                <a
+                    class="barca-card"
+                    href="https://www.fcbarcelona.com/en/club/stadium"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <div class="barca-icon">
+                        🏟️
+                    </div>
+
+                    <h3>
+                        Spotify Camp Nou
+                    </h3>
+
+                    <p>
+                        Ver o estádio no site oficial
+                    </p>
+
+                </a>
+
+
+                <a
+                    class="barca-card"
+                    href="https://www.fcbarcelona.com/en/club/galleries"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <div class="barca-icon">
+                        📸
+                    </div>
+
+                    <h3>
+                        Galeria Barça
+                    </h3>
+
+                    <p>
+                        Ver fotografias oficiais
+                    </p>
+
+                </a>
+
+
+                <a
+                    class="barca-card"
+                    href="https://www.fcbarcelona.com/en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <div class="barca-icon">
+                        🔵🔴
+                    </div>
+
+                    <h3>
+                        Site Oficial
+                    </h3>
+
+                    <p>
+                        Visitar FC Barcelona
+                    </p>
+
+                </a>
+
+            </div>
+
+
+            <a
+                class="site-oficial"
+                href="https://www.fcbarcelona.com/en"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                🌐 Visitar o Site Oficial do FC Barcelona
+            </a>
+
+
+            <!-- OBJETIVOS -->
+
+            <h2>
+                Os Meus Objetivos
+            </h2>
+
             <ul>
-                <li>Dominar o Desenvolvimento Web Avançado.</li>
-                <li>Criar projetos interativos e dinâmicos.</li>
-                <li>Partilhar a minha evolução com a comunidade.</li>
+
+                <li>
+                    Dominar o Desenvolvimento Web Avançado.
+                </li>
+
+                <li>
+                    Criar projetos interativos e dinâmicos.
+                </li>
+
+                <li>
+                    Aprender JavaScript.
+                </li>
+
+                <li>
+                    Criar os meus próprios softwares.
+                </li>
+
+                <li>
+                    Partilhar a minha evolução com a comunidade.
+                </li>
+
             </ul>
 
-            <h2>As Minhas Recomendações Musicais</h2>
-            <p style="color: #aaa; font-size: 0.9em; margin-bottom: 10px;">Escolha o estilo de som que prefere ouvir enquanto visita a minha página:</p>
+
+            <!-- MÚSICA -->
+
+            <h2>
+                🎵 As Minhas Recomendações Musicais
+            </h2>
+
+            <p style="color:#aaa;">
+
+                Escolha o estilo de som que prefere
+                enquanto visita a minha página:
+
+            </p>
+
+
             <div class="area-musica">
-                <a href="https://youtube.com" target="_blank" class="botao-musica musica-lofi">
+
+                <a
+                    href="https://www.youtube.com/results?search_query=lofi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="botao-musica musica-lofi"
+                >
                     🎧 Som de Foco (Lofi)
                 </a>
-                <a href="https://youtube.com" target="_blank" class="botao-musica musica-coldplay">
-                    🎵 Coldplay (Pop/Rock)
+
+
+                <a
+                    href="https://www.youtube.com/results?search_query=Coldplay"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="botao-musica musica-coldplay"
+                >
+                    🎵 Coldplay
                 </a>
+
             </div>
 
-            <h2>As Minhas Redes e Contactos</h2>
+
+            <!-- REDES -->
+
+            <h2>
+                📱 As Minhas Redes e Contactos
+            </h2>
+
+
             <div class="Lista-links">
-                <a href="https://instagram.com" target="_blank" class="botao-link">📸 Seguir no Instagram (@fortunato10)</a>
-                <a href="https://github.com" target="_blank" class="botao-link">🌐 GitHub (fortunatovela10-hash)</a>
-                <!-- ADICIONADO: O teu botão de e-mail agora está listado aqui nas tuas redes de forma fixa -->
-                <a href="mailto:fortunatovela10@gmail.com" class="botao-link">✉️ Enviar E-mail (fortunatovela10@gmail.com)</a>
+
+                <a
+                    href="https://instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="botao-link"
+                >
+                    📸 Instagram
+                </a>
+
+
+                <a
+                    href="https://github.com/fortunatovela10-hash"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="botao-link"
+                >
+                    🌐 GitHub
+                </a>
+
+
+                <a
+                    href="mailto:fortunatovela10@gmail.com"
+                    class="botao-link"
+                >
+                    ✉️ Enviar E-mail
+                </a>
+
             </div>
 
-            <h2>Deixe uma Mensagem</h2>
-            <form action="https://formspree.io" method="POST">
+
+            <!-- FORMULÁRIO -->
+
+            <h2>
+                💬 Deixe uma Mensagem
+            </h2>
+
+
+            <form
+                action="#"
+                method="POST"
+                onsubmit="enviarMensagem(event)"
+            >
+
                 <div class="grupo-formulario">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" placeholder="O seu nome..." required>
+
+                    <label for="nome">
+                        Nome:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="O seu nome..."
+                        required
+                    >
+
                 </div>
-                
+
+
                 <div class="grupo-formulario">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" placeholder="O seu e-mail..." required>
+
+                    <label for="email">
+                        E-mail:
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="O seu e-mail..."
+                        required
+                    >
+
                 </div>
-                
+
+
                 <div class="grupo-formulario">
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva aqui a sua mensagem..." required></textarea>
+
+                    <label for="mensagem">
+                        Mensagem:
+                    </label>
+
+                    <textarea
+                        id="mensagem"
+                        name="mensagem"
+                        placeholder="Escreva a sua mensagem..."
+                        required
+                    ></textarea>
+
                 </div>
-                
-                <button type="submit" class="botao-enviar">✉️ Enviar Mensagem</button>
+
+
+                <button
+                    type="submit"
+                    class="botao-enviar"
+                >
+                    🚀 Enviar Mensagem
+                </button>
+
             </form>
 
+
+            <!-- CONTADOR -->
+
             <div class="contador-container">
-                <span style="font-size: 0.85em; color: #aaa; display: block;">Visualizações da Página:</span>
-                <img src="https://shields.io" alt="Contador de Visitas">
+
+                <div class="contador-titulo">
+                    👀 Visitantes desta página
+                </div>
+
+                <div id="contador">
+                    000001
+                </div>
+
+                <div class="contador-info">
+                    Visitas neste navegador
+                </div>
+
+            </div>
+
+        </main>
+
+
+        <!-- RODAPÉ -->
+
+        <footer>
+
+            © 2026 Fortunato
+
+            <br>
+            <br>
+
+            💻 Sonhe • Aprenda • Conquiste 💚
+
+        </footer>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        /* =========================
+           CONTADOR DE VISITAS
+        ========================= */
+
+        const CHAVE =
+            "fortunato_contador_visitas";
+
+
+        let visitas =
+            localStorage.getItem(CHAVE);
+
+
+        if (visitas === null) {
+
+            visitas = 0;
+
+        }
+
+
+        visitas = Number(visitas);
+
+
+        const sessaoJaContada =
+            sessionStorage.getItem(
+                "fortunato_sessao_contada"
+            );
+
+
+        if (sessaoJaContada !== "sim") {
+
+            visitas++;
+
+            localStorage.setItem(
+                CHAVE,
+                visitas
+            );
+
+            sessionStorage.setItem(
+                "fortunato_sessao_contada",
+                "sim"
+            );
+
+        }
+
+
+        document.getElementById(
+            "contador"
+        ).textContent =
+            String(visitas).padStart(6, "0");
+
+
+        /* =========================
+           FORMULÁRIO
+        ========================= */
+
+        function enviarMensagem(event) {
+
+            event.preventDefault();
+
+
+            const nome =
+                document.getElementById(
+                    "nome"
+                ).value;
+
+
+            alert(
+                "Obrigado pela mensagem, "
+                + nome
+                + "! 🚀"
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>
