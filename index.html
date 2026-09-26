@@ -1,1076 +1,1394 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
-
+<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Perfil Digital | Fortunato</title>
+
+<meta name="description" content="Perfil digital do Fortunato - Estudante e Futuro Desenvolvedor Web">
+
+<style>
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at top left, #003d2b, transparent 30%),
+        radial-gradient(circle at bottom right, #001d3d, transparent 30%),
+        #050b14;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Fundo de partículas */
+
+#particles {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: 92%;
+    max-width: 850px;
+    margin: 40px auto;
+}
+
+/* =========================
+   CARTÃO PRINCIPAL
+========================= */
+
+.card {
+    background: rgba(8, 18, 30, 0.86);
+    border: 1px solid rgba(0, 255, 136, 0.15);
+    border-radius: 25px;
+    padding: 35px;
+    backdrop-filter: blur(15px);
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(0, 255, 136, 0.05);
+}
+
+/* =========================
+   FOTO
+========================= */
+
+.photo-container {
+    width: 165px;
+    height: 165px;
+    margin: auto;
+    position: relative;
+}
+
+.photo-container::before {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+
+    background: conic-gradient(
+        #00ff88,
+        #00a8ff,
+        #00ff88
+    );
+
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.profile-photo {
+    position: relative;
+    width: 165px;
+    height: 165px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #07111f;
+    display: block;
+    background: #0b1624;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+h1 {
+    margin-top: 25px;
+    font-size: clamp(30px, 7vw, 48px);
+    color: white;
+    text-shadow:
+        0 0 10px rgba(0,255,136,.3),
+        0 0 30px rgba(0,255,136,.15);
+}
+
+.typing {
+    margin-top: 12px;
+    min-height: 30px;
+    color: #00ff88;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    height: 23px;
+    background: #00ff88;
+    margin-left: 4px;
+    vertical-align: middle;
+    animation: blink .7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* STATUS */
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 15px;
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    background: rgba(0,255,136,.07);
+    border: 1px solid rgba(0,255,136,.2);
+
+    color: #b9c7d1;
+    font-size: 13px;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #00ff88;
+    box-shadow: 0 0 12px #00ff88;
+}
+
+/* =========================
+   SECÇÕES
+========================= */
+
+section {
+    margin-top: 40px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+
+    border-bottom: 2px solid #00ff88;
+}
+
+p {
+    color: #cbd6df;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+/* =========================
+   BARÇA
+========================= */
+
+.barca {
+    color: white;
+    font-weight: bold;
+
+    padding: 4px 8px;
+
+    border-radius: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #a50044,
+            #004d98
+        );
+}
+
+.barca-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.barca-card {
+    min-height: 170px;
+
+    padding: 22px;
+
+    border-radius: 18px;
+
+    text-decoration: none;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background:
+        linear-gradient(
+            135deg,
+            #a50044,
+            #004d98
+        );
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    transition: .3s;
+}
+
+.barca-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.35);
+}
 
-    <title>Perfil Digital | Fortunato</title>
+.barca-icon {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.barca-card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.barca-card p {
+    font-size: 13px;
+    color: rgba(255,255,255,.8);
+}
+
+.official {
+    display: block;
+
+    text-align: center;
+
+    margin-top: 15px;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    color: white;
+    text-decoration: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            #a50044,
+            #004d98
+        );
 
-    <style>
+    font-weight: bold;
+}
 
-        * {
-            box-sizing: border-box;
-        }
+/* =========================
+   OBJETIVOS
+========================= */
 
-        body {
-            margin: 0;
-            padding: 40px 20px;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            color: #e0e0e0;
-            background:
-                linear-gradient(135deg, #121212 0%, #0d1b2a 100%);
-            min-height: 100vh;
-        }
+.goals {
+    list-style: none;
+}
 
-        /* CARTÃO PRINCIPAL */
+.goals li {
+    padding: 14px;
 
-        .cartao-perfil {
-            max-width: 650px;
-            margin: auto;
-            padding: 30px;
+    margin-bottom: 10px;
 
-            background: rgba(30, 30, 30, 0.94);
+    border-radius: 10px;
 
-            border-radius: 18px;
+    background: rgba(255,255,255,.04);
 
-            border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255,255,255,.07);
 
-            box-shadow:
-                0 10px 40px rgba(0, 210, 255, 0.15);
-        }
+    color: #d8e2e9;
 
-        /* CABEÇALHO */
+    transition: .3s;
+}
 
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+.goals li:hover {
+    transform: translateX(6px);
+    border-color: #00ff88;
+}
 
-        /* FOTO */
+.goals li::before {
+    content: "✓";
+    color: #00ff88;
+    font-weight: bold;
+    margin-right: 10px;
+}
 
-        .foto-perfil {
-            width: 150px;
-            height: 150px;
+/* =========================
+   MÚSICA
+========================= */
 
-            object-fit: cover;
+.music {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
 
-            border-radius: 50%;
+.music a {
+    padding: 15px;
 
-            border: 3px solid #00ff88;
+    text-align: center;
 
-            box-shadow:
-                0 0 20px rgba(0, 255, 136, 0.35);
+    border-radius: 12px;
 
-            transition: 0.3s;
-        }
+    text-decoration: none;
 
-        .foto-perfil:hover {
-            transform: scale(1.05) rotate(2deg);
+    font-weight: bold;
 
-            box-shadow:
-                0 0 30px rgba(0, 255, 136, 0.6);
-        }
+    transition: .3s;
+}
 
-        /* TÍTULO */
+.lofi {
+    color: #ff7180;
+    border: 1px solid #ff4757;
+    background: rgba(255,71,87,.08);
+}
 
-        h1 {
-            color: #00ff88;
+.coldplay {
+    color: #8db4ff;
+    border: 1px solid #70a1ff;
+    background: rgba(112,161,255,.08);
+}
 
-            margin-top: 18px;
-            margin-bottom: 8px;
+.music a:hover {
+    transform: translateY(-4px);
+}
 
-            text-shadow:
-                0 0 10px rgba(0, 255, 136, 0.3);
-        }
+/* =========================
+   REDES SOCIAIS
+========================= */
 
-        /* TEXTO ANIMADO */
+.social {
+    display: grid;
+    gap: 12px;
+}
 
-        .subtitulo {
-            color: #aaa;
+.social a {
+    padding: 16px;
 
-            font-size: 1.1em;
+    border-radius: 12px;
 
-            font-style: italic;
+    text-decoration: none;
 
-            display: inline-block;
+    color: #00ff88;
 
-            white-space: nowrap;
+    border: 1px solid rgba(0,255,136,.4);
 
-            overflow: hidden;
+    background: rgba(0,255,136,.03);
 
-            border-right: 3px solid #00ff88;
+    text-align: center;
 
-            width: 0;
+    font-weight: bold;
 
-            animation:
-                escrever 4.5s steps(36, end) 0.8s forwards,
-                cursorPiscar 0.7s step-end infinite;
+    transition: .3s;
+}
 
-            max-width: 100%;
-        }
+.social a:hover {
+    background: #00ff88;
+    color: #03100a;
+    transform: translateY(-3px);
+}
 
-        /* ANIMAÇÃO DE ESCREVER */
+.username {
+    display: block;
 
-        @keyframes escrever {
+    margin-top: 5px;
 
-            from {
-                width: 0;
-            }
+    font-size: 13px;
 
-            to {
-                width: 36ch;
-            }
-        }
+    opacity: .7;
+    font-weight: normal;
+}
 
-        /* CURSOR A PISCAR */
+/* =========================
+   FORMULÁRIO
+========================= */
 
-        @keyframes cursorPiscar {
+.form {
+    display: grid;
+    gap: 14px;
+}
 
-            0%,
-            100% {
-                border-color: #00ff88;
-            }
+.form-group {
+    display: grid;
+    gap: 7px;
+}
 
-            50% {
-                border-color: transparent;
-            }
-        }
+label {
+    font-weight: bold;
+}
 
-        /* TÍTULOS DAS SECÇÕES */
+input,
+textarea {
+    width: 100%;
 
-        h2 {
-            color: #d5d5d5;
+    padding: 14px;
 
-            border-bottom: 2px solid #00ff88;
+    border-radius: 10px;
 
-            padding-bottom: 7px;
+    border: 1px solid #34404c;
 
-            margin-top: 32px;
-        }
+    background: #0b121b;
 
-        /* PARÁGRAFOS */
+    color: white;
 
-        p {
-            line-height: 1.7;
-        }
+    outline: none;
 
-        /* BARÇA */
+    font-size: 15px;
+}
 
-        .destaque-barca {
-            color: #ffed00;
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
 
-            font-weight: bold;
+input:focus,
+textarea:focus {
+    border-color: #00ff88;
 
-            padding: 3px 7px;
+    box-shadow:
+        0 0 0 3px rgba(0,255,136,.08);
+}
 
-            border-radius: 5px;
+.send {
+    padding: 15px;
 
-            background:
-                linear-gradient(
-                    90deg,
-                    #a50044,
-                    #004d98
-                );
-        }
+    border: none;
 
-        /* GALERIA */
+    border-radius: 10px;
 
-        .galeria-barca {
-            display: grid;
+    background: #00ff88;
 
-            grid-template-columns: repeat(2, 1fr);
+    color: #03100a;
 
-            gap: 14px;
+    font-size: 16px;
 
-            margin-top: 18px;
-        }
+    font-weight: bold;
 
-        .barca-card {
-            position: relative;
+    cursor: pointer;
 
-            min-height: 170px;
+    transition: .3s;
+}
 
-            padding: 20px;
+.send:hover {
+    transform: translateY(-3px);
 
-            border-radius: 12px;
+    box-shadow:
+        0 10px 30px rgba(0,255,136,.2);
+}
 
-            overflow: hidden;
+/* =========================
+   CONTADOR
+========================= */
 
-            text-decoration: none;
+.counter {
+    margin-top: 35px;
 
-            display: flex;
+    text-align: center;
 
-            flex-direction: column;
+    padding: 25px;
 
-            justify-content: flex-end;
+    border-radius: 18px;
 
-            color: white;
+    background: rgba(0,0,0,.25);
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #a50044,
-                    #004d98
-                );
+    border: 1px solid rgba(0,255,136,.15);
+}
 
-            border: 1px solid rgba(255, 255, 255, 0.15);
+.counter-title {
+    color: #aebbc5;
+}
 
-            transition: 0.3s;
-        }
+#visitorCount {
+    margin: 8px 0;
 
-        .barca-card:hover {
-            transform: translateY(-5px);
+    font-size: 42px;
 
-            box-shadow:
-                0 10px 25px rgba(0, 0, 0, 0.4);
+    color: #00ff88;
 
-            border-color: #00ff88;
-        }
+    font-weight: bold;
 
-        .barca-card::before {
-            content: "";
+    letter-spacing: 5px;
 
-            position: absolute;
+    text-shadow:
+        0 0 15px rgba(0,255,136,.4);
+}
 
-            inset: 0;
+.counter-small {
+    color: #687784;
+    font-size: 12px;
+}
 
-            background:
-                radial-gradient(
-                    circle at top right,
-                    rgba(255,255,255,0.25),
-                    transparent 45%
-                );
-        }
+/* =========================
+   FOOTER
+========================= */
 
-        .barca-icon {
-            position: relative;
+footer {
+    margin-top: 40px;
 
-            font-size: 50px;
+    text-align: center;
 
-            margin-bottom: 10px;
-        }
+    color: #73828e;
 
-        .barca-card h3,
-        .barca-card p {
-            position: relative;
-        }
+    line-height: 1.8;
+}
 
-        .barca-card h3 {
-            margin: 0;
+.top {
+    color: #00ff88;
+    text-decoration: none;
+}
 
-            font-size: 18px;
-        }
+/* =========================
+   RESPONSIVO
+========================= */
 
-        .barca-card p {
-            margin: 5px 0 0;
+@media(max-width:600px) {
 
-            color: rgba(255,255,255,0.75);
+    .container {
+        width: 95%;
+        margin: 20px auto;
+    }
 
-            font-size: 13px;
-        }
+    .card {
+        padding: 22px;
+    }
 
-        /* BOTÃO SITE OFICIAL */
+    .barca-grid,
+    .music {
+        grid-template-columns: 1fr;
+    }
 
-        .site-oficial {
-            display: block;
+    .photo-container,
+    .profile-photo {
+        width: 135px;
+        height: 135px;
+    }
 
-            margin-top: 15px;
+    h1 {
+        font-size: 32px;
+    }
 
-            padding: 14px;
+    .typing {
+        font-size: 17px;
+    }
+}
 
-            text-align: center;
-
-            border-radius: 8px;
-
-            text-decoration: none;
-
-            color: white;
-
-            font-weight: bold;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #a50044,
-                    #004d98
-                );
-
-            border: 1px solid rgba(255,255,255,0.15);
-
-            transition: 0.3s;
-        }
-
-        .site-oficial:hover {
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 0 18px rgba(0,255,136,0.3);
-        }
-
-        /* LISTA */
-
-        ul {
-            padding-left: 22px;
-        }
-
-        li {
-            margin-bottom: 10px;
-
-            line-height: 1.5;
-        }
-
-        /* MÚSICA */
-
-        .area-musica {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 10px;
-
-            margin-top: 15px;
-        }
-
-        .botao-musica {
-            padding: 13px;
-
-            border-radius: 7px;
-
-            text-align: center;
-
-            text-decoration: none;
-
-            font-weight: bold;
-
-            transition: 0.3s;
-        }
-
-        .musica-lofi {
-            color: #ff4757;
-
-            border: 1px solid #ff4757;
-
-            background:
-                rgba(255,71,87,0.1);
-        }
-
-        .musica-lofi:hover {
-            background: #ff4757;
-
-            color: white;
-
-            transform: translateY(-2px);
-        }
-
-        .musica-coldplay {
-            color: #70a1ff;
-
-            border: 1px solid #70a1ff;
-
-            background:
-                rgba(112,161,255,0.1);
-        }
-
-        .musica-coldplay:hover {
-            background: #70a1ff;
-
-            color: white;
-
-            transform: translateY(-2px);
-        }
-
-        /* REDES */
-
-        .Lista-links {
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 10px;
-
-            margin-top: 15px;
-        }
-
-        .botao-link {
-            display: block;
-
-            padding: 13px;
-
-            text-align: center;
-
-            color: #00ff88;
-
-            text-decoration: none;
-
-            font-weight: bold;
-
-            border: 1px solid #00ff88;
-
-            border-radius: 7px;
-
-            background:
-                rgba(42,42,42,0.8);
-
-            transition: 0.3s;
-        }
-
-        .botao-link:hover {
-            color: #121212;
-
-            background: #00ff88;
-
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 0 15px rgba(0,255,136,0.5);
-        }
-
-        /* FORMULÁRIO */
-
-        .grupo-formulario {
-            margin-bottom: 15px;
-        }
-
-        label {
-            display: block;
-
-            margin-bottom: 7px;
-        }
-
-        input,
-        textarea {
-            width: 100%;
-
-            padding: 12px;
-
-            border-radius: 7px;
-
-            border: 1px solid #444;
-
-            background: #222;
-
-            color: white;
-
-            font-family: inherit;
-
-            font-size: 15px;
-        }
-
-        textarea {
-            min-height: 120px;
-
-            resize: vertical;
-        }
-
-        input:focus,
-        textarea:focus {
-            outline: none;
-
-            border-color: #00ff88;
-
-            box-shadow:
-                0 0 8px rgba(0,255,136,0.3);
-        }
-
-        /* BOTÃO ENVIAR */
-
-        .botao-enviar {
-            width: 100%;
-
-            padding: 14px;
-
-            border: none;
-
-            border-radius: 7px;
-
-            background: #00ff88;
-
-            color: #121212;
-
-            font-size: 16px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-            transition: 0.3s;
-        }
-
-        .botao-enviar:hover {
-            background: #00cc6e;
-
-            box-shadow:
-                0 0 15px rgba(0,255,136,0.4);
-        }
-
-        /* CONTADOR */
-
-        .contador-container {
-            margin-top: 30px;
-
-            padding: 22px;
-
-            text-align: center;
-
-            border-radius: 12px;
-
-            background:
-                rgba(0,0,0,0.35);
-
-            border:
-                1px solid rgba(0,255,136,0.15);
-        }
-
-        .contador-titulo {
-            color: #aaa;
-
-            font-size: 15px;
-
-            margin-bottom: 10px;
-        }
-
-        #contador {
-            color: #00ff88;
-
-            font-size: 42px;
-
-            font-weight: bold;
-
-            letter-spacing: 5px;
-
-            text-shadow:
-                0 0 12px rgba(0,255,136,0.5);
-        }
-
-        .contador-info {
-            margin-top: 8px;
-
-            color: #666;
-
-            font-size: 12px;
-        }
-
-        /* RODAPÉ */
-
-        footer {
-            text-align: center;
-
-            margin-top: 40px;
-
-            color: #777;
-
-            font-size: 14px;
-        }
-
-        /* TELEMÓVEL */
-
-        @media (max-width: 520px) {
-
-            body {
-                padding: 15px 10px;
-            }
-
-            .cartao-perfil {
-                padding: 20px;
-            }
-
-            .galeria-barca,
-            .area-musica {
-                grid-template-columns: 1fr;
-            }
-
-            .foto-perfil {
-                width: 130px;
-                height: 130px;
-            }
-
-            .subtitulo {
-                font-size: 0.95em;
-
-                white-space: normal;
-
-                width: auto;
-
-                animation: none;
-
-                border-right: none;
-
-                color: #00ff88;
-            }
-        }
-
-    </style>
+</style>
 </head>
-
 
 <body>
 
-    <div class="cartao-perfil">
+<canvas id="particles"></canvas>
 
-        <!-- CABEÇALHO -->
+<div class="container">
 
-        <header>
+<div class="card" id="top">
 
-            <img
-                src="foto.jpg"
-                alt="Foto de perfil do Fortunato"
-                class="foto-perfil"
-            >
+<!-- =========================
+     CABEÇALHO
+========================= -->
 
-            <h1>
-                Olá, eu sou o Fortunato!
-            </h1>
+<header>
 
-            <!-- TEXTO ANIMADO -->
+    <div class="photo-container">
 
-            <p class="subtitulo">
-                Estudante &amp; Futuro Desenvolvedor Web
-            </p>
-
-        </header>
-
-
-        <main>
-
-            <!-- SOBRE MIM -->
-
-            <h2>
-                Sobre Mim
-            </h2>
-
-            <p>
-                Sou fascinado pelo mundo da tecnologia
-                e pela criação de soluções digitais.
-            </p>
-
-            <p>
-                Atualmente, estou a dar os meus primeiros
-                passos na programação front-end, aprendendo
-                HTML5, CSS3 e JavaScript.
-            </p>
-
-            <p>
-                Fora do mundo digital, sou um grande adepto
-                do futebol e a minha equipa favorita é
-                <span class="destaque-barca">
-                    FC Barcelona
-                </span>
-                ⚽🔵🔴
-            </p>
-
-
-            <!-- BARCELONA -->
-
-            <h2>
-                🔵🔴 O Meu Clube do Coração
-            </h2>
-
-            <p>
-                Consulta as páginas oficiais do FC Barcelona:
-            </p>
-
-
-            <div class="galeria-barca">
-
-                <a
-                    class="barca-card"
-                    href="https://www.fcbarcelona.com/en/club/identitat/escut"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-
-                    <div class="barca-icon">
-                        🛡️
-                    </div>
-
-                    <h3>
-                        Emblema do Barça
-                    </h3>
-
-                    <p>
-                        Ver o emblema no site oficial
-                    </p>
-
-                </a>
-
-
-                <a
-                    class="barca-card"
-                    href="https://www.fcbarcelona.com/en/club/stadium"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-
-                    <div class="barca-icon">
-                        🏟️
-                    </div>
-
-                    <h3>
-                        Spotify Camp Nou
-                    </h3>
-
-                    <p>
-                        Ver o estádio no site oficial
-                    </p>
-
-                </a>
-
-
-                <a
-                    class="barca-card"
-                    href="https://www.fcbarcelona.com/en/club/galleries"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-
-                    <div class="barca-icon">
-                        📸
-                    </div>
-
-                    <h3>
-                        Galeria Barça
-                    </h3>
-
-                    <p>
-                        Ver fotografias oficiais
-                    </p>
-
-                </a>
-
-
-                <a
-                    class="barca-card"
-                    href="https://www.fcbarcelona.com/en"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-
-                    <div class="barca-icon">
-                        🔵🔴
-                    </div>
-
-                    <h3>
-                        Site Oficial
-                    </h3>
-
-                    <p>
-                        Visitar FC Barcelona
-                    </p>
-
-                </a>
-
-            </div>
-
-
-            <a
-                class="site-oficial"
-                href="https://www.fcbarcelona.com/en"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                🌐 Visitar o Site Oficial do FC Barcelona
-            </a>
-
-
-            <!-- OBJETIVOS -->
-
-            <h2>
-                Os Meus Objetivos
-            </h2>
-
-            <ul>
-
-                <li>
-                    Dominar o Desenvolvimento Web Avançado.
-                </li>
-
-                <li>
-                    Criar projetos interativos e dinâmicos.
-                </li>
-
-                <li>
-                    Aprender JavaScript.
-                </li>
-
-                <li>
-                    Criar os meus próprios softwares.
-                </li>
-
-                <li>
-                    Partilhar a minha evolução com a comunidade.
-                </li>
-
-            </ul>
-
-
-            <!-- MÚSICA -->
-
-            <h2>
-                🎵 As Minhas Recomendações Musicais
-            </h2>
-
-            <p style="color:#aaa;">
-
-                Escolha o estilo de som que prefere
-                enquanto visita a minha página:
-
-            </p>
-
-
-            <div class="area-musica">
-
-                <a
-                    href="https://www.youtube.com/results?search_query=lofi"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="botao-musica musica-lofi"
-                >
-                    🎧 Som de Foco (Lofi)
-                </a>
-
-
-                <a
-                    href="https://www.youtube.com/results?search_query=Coldplay"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="botao-musica musica-coldplay"
-                >
-                    🎵 Coldplay
-                </a>
-
-            </div>
-
-
-            <!-- REDES -->
-
-            <h2>
-                📱 As Minhas Redes e Contactos
-            </h2>
-
-
-            <div class="Lista-links">
-
-                <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="botao-link"
-                >
-                    📸 Instagram
-                </a>
-
-
-                <a
-                    href="https://github.com/fortunatovela10-hash"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="botao-link"
-                >
-                    🌐 GitHub
-                </a>
-
-
-                <a
-                    href="mailto:fortunatovela10@gmail.com"
-                    class="botao-link"
-                >
-                    ✉️ Enviar E-mail
-                </a>
-
-            </div>
-
-
-            <!-- FORMULÁRIO -->
-
-            <h2>
-                💬 Deixe uma Mensagem
-            </h2>
-
-
-            <form
-                action="#"
-                method="POST"
-                onsubmit="enviarMensagem(event)"
-            >
-
-                <div class="grupo-formulario">
-
-                    <label for="nome">
-                        Nome:
-                    </label>
-
-                    <input
-                        type="text"
-                        id="nome"
-                        name="nome"
-                        placeholder="O seu nome..."
-                        required
-                    >
-
-                </div>
-
-
-                <div class="grupo-formulario">
-
-                    <label for="email">
-                        E-mail:
-                    </label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="O seu e-mail..."
-                        required
-                    >
-
-                </div>
-
-
-                <div class="grupo-formulario">
-
-                    <label for="mensagem">
-                        Mensagem:
-                    </label>
-
-                    <textarea
-                        id="mensagem"
-                        name="mensagem"
-                        placeholder="Escreva a sua mensagem..."
-                        required
-                    ></textarea>
-
-                </div>
-
-
-                <button
-                    type="submit"
-                    class="botao-enviar"
-                >
-                    🚀 Enviar Mensagem
-                </button>
-
-            </form>
-
-
-            <!-- CONTADOR -->
-
-            <div class="contador-container">
-
-                <div class="contador-titulo">
-                    👀 Visitantes desta página
-                </div>
-
-                <div id="contador">
-                    000001
-                </div>
-
-                <div class="contador-info">
-                    Visitas neste navegador
-                </div>
-
-            </div>
-
-        </main>
-
-
-        <!-- RODAPÉ -->
-
-        <footer>
-
-            © 2026 Fortunato
-
-            <br>
-            <br>
-
-            💻 Sonhe • Aprenda • Conquiste 💚
-
-        </footer>
+        <img
+            src="foto.jpg"
+            alt="Foto de perfil do Fortunato"
+            class="profile-photo"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;width:100%;height:100%;border-radius:50%;background:#07111f;display:flex;align-items:center;justify-content:center;font-size:55px;position:relative&quot;>👨‍💻</div>';"
+        >
 
     </div>
 
+    <h1>
+        Olá, eu sou o Fortunato!
+    </h1>
 
-    <!-- JAVASCRIPT -->
+    <div class="typing">
+        <span id="typingText"></span>
+        <span class="cursor"></span>
+    </div>
 
-    <script>
+    <div class="status">
+        <span class="status-dot"></span>
+        A aprender programação
+    </div>
 
-        /* =========================
-           CONTADOR DE VISITAS
-        ========================= */
-
-        const CHAVE =
-            "fortunato_contador_visitas";
-
-
-        let visitas =
-            localStorage.getItem(CHAVE);
+</header>
 
 
-        if (visitas === null) {
+<!-- =========================
+     SOBRE MIM
+========================= -->
 
-            visitas = 0;
+<section>
 
+<h2>👨‍💻 Sobre Mim</h2>
+
+<p>
+Sou fascinado pelo mundo da tecnologia e pela criação
+de soluções digitais.
+</p>
+
+<p>
+Atualmente, estou a dar os meus primeiros passos
+na programação Front-End, aprendendo HTML, CSS e JavaScript.
+</p>
+
+<p>
+Fora do mundo digital, sou um grande adepto do futebol
+e a minha equipa favorita é
+<span class="barca">FC Barcelona</span> ⚽🔵🔴
+</p>
+
+</section>
+
+
+<!-- =========================
+     BARCELONA
+========================= -->
+
+<section>
+
+<h2>🔵🔴 O Meu Clube do Coração</h2>
+
+<p>
+Consulta algumas páginas oficiais do FC Barcelona:
+</p>
+
+<div class="barca-grid">
+
+<a
+href="https://www.fcbarcelona.com/en/club/identitat/escut"
+target="_blank"
+class="barca-card"
+>
+
+<div class="barca-icon">
+🛡️
+</div>
+
+<h3>
+Emblema do Barça
+</h3>
+
+<p>
+Ver o emblema oficial
+</p>
+
+</a>
+
+
+<a
+href="https://www.fcbarcelona.com/en/club/stadium"
+target="_blank"
+class="barca-card"
+>
+
+<div class="barca-icon">
+🏟️
+</div>
+
+<h3>
+Estádio
+</h3>
+
+<p>
+Conhecer o estádio
+</p>
+
+</a>
+
+
+<a
+href="https://www.fcbarcelona.com/en/club/galleries"
+target="_blank"
+class="barca-card"
+>
+
+<div class="barca-icon">
+📸
+</div>
+
+<h3>
+Galeria
+</h3>
+
+<p>
+Ver fotografias oficiais
+</p>
+
+</a>
+
+
+<a
+href="https://www.fcbarcelona.com/en"
+target="_blank"
+class="barca-card"
+>
+
+<div class="barca-icon">
+🔵🔴
+</div>
+
+<h3>
+FC Barcelona
+</h3>
+
+<p>
+Visitar o site oficial
+</p>
+
+</a>
+
+</div>
+
+<a
+href="https://www.fcbarcelona.com/en"
+target="_blank"
+class="official"
+>
+🌐 Visitar o Site Oficial do FC Barcelona
+</a>
+
+</section>
+
+
+<!-- =========================
+     OBJETIVOS
+========================= -->
+
+<section>
+
+<h2>🎯 Os Meus Objetivos</h2>
+
+<ul class="goals">
+
+<li>
+Dominar o Desenvolvimento Web.
+</li>
+
+<li>
+Criar projetos interativos e modernos.
+</li>
+
+<li>
+Aprender JavaScript.
+</li>
+
+<li>
+Criar os meus próprios softwares.
+</li>
+
+<li>
+Melhorar cada vez mais na programação.
+</li>
+
+<li>
+Partilhar a minha evolução.
+</li>
+
+</ul>
+
+</section>
+
+
+<!-- =========================
+     MÚSICA
+========================= -->
+
+<section>
+
+<h2>🎵 As Minhas Recomendações Musicais</h2>
+
+<p>
+Música para acompanhar os meus estudos e projetos:
+</p>
+
+<div class="music">
+
+<a
+href="https://www.youtube.com/results?search_query=lofi"
+target="_blank"
+class="lofi"
+>
+🎧 Lofi
+</a>
+
+<a
+href="https://www.youtube.com/results?search_query=Coldplay"
+target="_blank"
+class="coldplay"
+>
+🎵 Coldplay
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     REDES SOCIAIS
+========================= -->
+
+<section>
+
+<h2>📱 As Minhas Redes e Contactos</h2>
+
+<div class="social">
+
+<a
+href="https://www.instagram.com/fortunatovela10/"
+target="_blank"
+>
+📸 Instagram
+
+<span class="username">
+@fortunatovela10
+</span>
+
+</a>
+
+
+<a
+href="https://github.com/fortunatovela10-hash"
+target="_blank"
+>
+💻 GitHub
+
+<span class="username">
+fortunatovela10-hash
+</span>
+
+</a>
+
+
+<a
+href="https://www.youtube.com/@Fortunatovela-f4t"
+target="_blank"
+>
+▶️ YouTube
+
+<span class="username">
+@Fortunatovela-f4t
+</span>
+
+</a>
+
+
+<a
+href="mailto:fortunatovela10@gmail.com"
+>
+✉️ E-mail
+
+<span class="username">
+fortunatovela10@gmail.com
+</span>
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FORMULÁRIO
+========================= -->
+
+<section>
+
+<h2>💬 Deixe uma Mensagem</h2>
+
+<form
+class="form"
+onsubmit="sendMessage(event)"
+>
+
+<div class="form-group">
+
+<label for="name">
+Nome
+</label>
+
+<input
+type="text"
+id="name"
+placeholder="O seu nome..."
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="email">
+E-mail
+</label>
+
+<input
+type="email"
+id="email"
+placeholder="O seu e-mail..."
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="message">
+Mensagem
+</label>
+
+<textarea
+id="message"
+placeholder="Escreva a sua mensagem..."
+required
+></textarea>
+
+</div>
+
+
+<button
+type="submit"
+class="send"
+>
+🚀 Enviar Mensagem
+</button>
+
+</form>
+
+</section>
+
+
+<!-- =========================
+     CONTADOR
+========================= -->
+
+<div class="counter">
+
+<div class="counter-title">
+👀 Visitas neste navegador
+</div>
+
+<div id="visitorCount">
+000000
+</div>
+
+<div class="counter-small">
+Contador guardado neste navegador.
+</div>
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+© 2026 Fortunato
+
+<br>
+
+💻 Sonhe • Aprenda • Conquiste 💚
+
+<br><br>
+
+<a
+href="#top"
+class="top"
+>
+↑ Voltar ao topo
+</a>
+
+</footer>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   TEXTO DIGITADO
+========================= */
+
+const phrases = [
+
+    "Estudante & Futuro Desenvolvedor Web",
+
+    "Criador de projetos digitais",
+
+    "A aprender HTML, CSS & JavaScript",
+
+    "Apaixonado por tecnologia"
+
+];
+
+let phraseIndex = 0;
+let letterIndex = 0;
+let deleting = false;
+
+const typingText =
+document.getElementById("typingText");
+
+
+function typeWriter() {
+
+    const phrase =
+    phrases[phraseIndex];
+
+
+    if (!deleting) {
+
+        typingText.textContent =
+        phrase.substring(0, letterIndex + 1);
+
+        letterIndex++;
+
+
+        if (letterIndex === phrase.length) {
+
+            deleting = true;
+
+            setTimeout(typeWriter, 1800);
+
+            return;
         }
 
+        setTimeout(typeWriter, 70);
 
-        visitas = Number(visitas);
+    }
+
+    else {
+
+        typingText.textContent =
+        phrase.substring(0, letterIndex - 1);
+
+        letterIndex--;
 
 
-        const sessaoJaContada =
-            sessionStorage.getItem(
-                "fortunato_sessao_contada"
-            );
+        if (letterIndex === 0) {
 
+            deleting = false;
 
-        if (sessaoJaContada !== "sim") {
+            phraseIndex++;
 
-            visitas++;
+            if (phraseIndex >= phrases.length) {
+                phraseIndex = 0;
+            }
 
-            localStorage.setItem(
-                CHAVE,
-                visitas
-            );
+            setTimeout(typeWriter, 400);
 
-            sessionStorage.setItem(
-                "fortunato_sessao_contada",
-                "sim"
-            );
-
+            return;
         }
 
+        setTimeout(typeWriter, 40);
+    }
 
-        document.getElementById(
-            "contador"
-        ).textContent =
-            String(visitas).padStart(6, "0");
+}
 
-
-        /* =========================
-           FORMULÁRIO
-        ========================= */
-
-        function enviarMensagem(event) {
-
-            event.preventDefault();
+typeWriter();
 
 
-            const nome =
-                document.getElementById(
-                    "nome"
-                ).value;
+/* =========================
+   CONTADOR
+========================= */
+
+const counterKey =
+"fortunato_visitas";
+
+let visits =
+Number(localStorage.getItem(counterKey) || 0);
 
 
-            alert(
-                "Obrigado pela mensagem, "
-                + nome
-                + "! 🚀"
+if (
+sessionStorage.getItem("visit_registered")
+!== "yes"
+) {
+
+    visits++;
+
+    localStorage.setItem(
+        counterKey,
+        visits
+    );
+
+    sessionStorage.setItem(
+        "visit_registered",
+        "yes"
+    );
+}
+
+
+document.getElementById(
+    "visitorCount"
+).textContent =
+String(visits).padStart(6, "0");
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+function sendMessage(event) {
+
+    event.preventDefault();
+
+    const name =
+    document.getElementById("name").value;
+
+    alert(
+        "Obrigado pela mensagem, "
+        + name
+        + "! 🚀"
+    );
+
+    event.target.reset();
+}
+
+
+/* =========================
+   PARTÍCULAS
+========================= */
+
+const canvas =
+document.getElementById("particles");
+
+const ctx =
+canvas.getContext("2d");
+
+let particles = [];
+
+let width = 0;
+let height = 0;
+
+
+function resizeCanvas() {
+
+    width = window.innerWidth;
+    height = window.innerHeight;
+
+    canvas.width = width;
+    canvas.height = height;
+
+    createParticles();
+}
+
+
+function createParticles() {
+
+    const amount =
+    Math.min(
+        80,
+        Math.max(
+            25,
+            Math.floor(
+                (width * height) / 18000
+            )
+        )
+    );
+
+
+    particles =
+    Array.from(
+        { length: amount },
+        () => ({
+
+            x: Math.random() * width,
+
+            y: Math.random() * height,
+
+            vx:
+            (Math.random() - .5)
+            * .4,
+
+            vy:
+            (Math.random() - .5)
+            * .4,
+
+            radius:
+            Math.random() * 1.7 + .5
+
+        })
+    );
+}
+
+
+function animateParticles() {
+
+    ctx.clearRect(
+        0,
+        0,
+        width,
+        height
+    );
+
+
+    particles.forEach(
+        particle => {
+
+            particle.x +=
+            particle.vx;
+
+            particle.y +=
+            particle.vy;
+
+
+            if (
+                particle.x < -10
+            ) {
+                particle.x =
+                width + 10;
+            }
+
+
+            if (
+                particle.x > width + 10
+            ) {
+                particle.x = -10;
+            }
+
+
+            if (
+                particle.y < -10
+            ) {
+                particle.y =
+                height + 10;
+            }
+
+
+            if (
+                particle.y > height + 10
+            ) {
+                particle.y = -10;
+            }
+
+
+            ctx.beginPath();
+
+            ctx.arc(
+                particle.x,
+                particle.y,
+                particle.radius,
+                0,
+                Math.PI * 2
             );
 
-        }
+            ctx.fillStyle =
+            "rgba(0,255,136,.55)";
 
-    </script>
+            ctx.fill();
+
+        }
+    );
+
+
+    for (
+        let i = 0;
+        i < particles.length;
+        i++
+    ) {
+
+        for (
+            let j = i + 1;
+            j < particles.length;
+            j++
+        ) {
+
+            const a =
+            particles[i];
+
+            const b =
+            particles[j];
+
+
+            const dx =
+            a.x - b.x;
+
+            const dy =
+            a.y - b.y;
+
+
+            const distance =
+            Math.sqrt(
+                dx * dx +
+                dy * dy
+            );
+
+
+            if (distance < 120) {
+
+                ctx.beginPath();
+
+                ctx.moveTo(
+                    a.x,
+                    a.y
+                );
+
+                ctx.lineTo(
+                    b.x,
+                    b.y
+                );
+
+                ctx.strokeStyle =
+                "rgba(0,168,255,.12)";
+
+                ctx.lineWidth = 1;
+
+                ctx.stroke();
+            }
+        }
+    }
+
+
+    requestAnimationFrame(
+        animateParticles
+    );
+}
+
+
+window.addEventListener(
+    "resize",
+    resizeCanvas
+);
+
+
+resizeCanvas();
+
+animateParticles();
+
+</script>
 
 </body>
-
 </html>
