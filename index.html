@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -9,10 +10,6 @@
 <meta name="description" content="Perfil digital do Fortunato - Estudante e Futuro Desenvolvedor Web">
 
 <style>
-
-/* =========================
-   CONFIGURAÇÕES GERAIS
-========================= */
 
 * {
     margin: 0;
@@ -35,8 +32,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Fundo de partículas */
-
 #particles {
     position: fixed;
     inset: 0;
@@ -45,19 +40,11 @@ body {
     z-index: -1;
 }
 
-/* =========================
-   CONTAINER
-========================= */
-
 .container {
     width: 92%;
     max-width: 850px;
     margin: 40px auto;
 }
-
-/* =========================
-   CARTÃO PRINCIPAL
-========================= */
 
 .card {
     background: rgba(8, 18, 30, 0.86);
@@ -69,10 +56,6 @@ body {
         0 25px 80px rgba(0, 0, 0, 0.5),
         0 0 30px rgba(0, 255, 136, 0.05);
 }
-
-/* =========================
-   FOTO
-========================= */
 
 .photo-container {
     width: 165px;
@@ -86,13 +69,11 @@ body {
     position: absolute;
     inset: -6px;
     border-radius: 50%;
-
     background: conic-gradient(
         #00ff88,
         #00a8ff,
         #00ff88
     );
-
     animation: rotate 4s linear infinite;
 }
 
@@ -112,10 +93,6 @@ body {
     display: block;
     background: #0b1624;
 }
-
-/* =========================
-   CABEÇALHO
-========================= */
 
 header {
     text-align: center;
@@ -155,21 +132,15 @@ h1 {
     }
 }
 
-/* STATUS */
-
 .status {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-
     margin-top: 15px;
     padding: 8px 15px;
-
     border-radius: 30px;
-
     background: rgba(0,255,136,.07);
     border: 1px solid rgba(0,255,136,.2);
-
     color: #b9c7d1;
     font-size: 13px;
 }
@@ -182,10 +153,6 @@ h1 {
     box-shadow: 0 0 12px #00ff88;
 }
 
-/* =========================
-   SECÇÕES
-========================= */
-
 section {
     margin-top: 40px;
 }
@@ -194,7 +161,6 @@ h2 {
     font-size: 24px;
     margin-bottom: 18px;
     padding-bottom: 10px;
-
     border-bottom: 2px solid #00ff88;
 }
 
@@ -204,18 +170,11 @@ p {
     margin-bottom: 12px;
 }
 
-/* =========================
-   BARÇA
-========================= */
-
 .barca {
     color: white;
     font-weight: bold;
-
     padding: 4px 8px;
-
     border-radius: 6px;
-
     background:
         linear-gradient(
             90deg,
@@ -232,27 +191,20 @@ p {
 
 .barca-card {
     min-height: 170px;
-
     padding: 22px;
-
     border-radius: 18px;
-
     text-decoration: none;
     color: white;
-
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
     background:
         linear-gradient(
             135deg,
             #a50044,
             #004d98
         );
-
     border: 1px solid rgba(255,255,255,.12);
-
     transition: .3s;
 }
 
@@ -278,31 +230,20 @@ p {
 
 .official {
     display: block;
-
     text-align: center;
-
     margin-top: 15px;
-
     padding: 15px;
-
     border-radius: 12px;
-
     color: white;
     text-decoration: none;
-
     background:
         linear-gradient(
             90deg,
             #a50044,
             #004d98
         );
-
     font-weight: bold;
 }
-
-/* =========================
-   OBJETIVOS
-========================= */
 
 .goals {
     list-style: none;
@@ -310,17 +251,11 @@ p {
 
 .goals li {
     padding: 14px;
-
     margin-bottom: 10px;
-
     border-radius: 10px;
-
     background: rgba(255,255,255,.04);
-
     border: 1px solid rgba(255,255,255,.07);
-
     color: #d8e2e9;
-
     transition: .3s;
 }
 
@@ -336,10 +271,6 @@ p {
     margin-right: 10px;
 }
 
-/* =========================
-   MÚSICA
-========================= */
-
 .music {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -348,15 +279,10 @@ p {
 
 .music a {
     padding: 15px;
-
     text-align: center;
-
     border-radius: 12px;
-
     text-decoration: none;
-
     font-weight: bold;
-
     transition: .3s;
 }
 
@@ -376,10 +302,6 @@ p {
     transform: translateY(-4px);
 }
 
-/* =========================
-   REDES SOCIAIS
-========================= */
-
 .social {
     display: grid;
     gap: 12px;
@@ -387,21 +309,13 @@ p {
 
 .social a {
     padding: 16px;
-
     border-radius: 12px;
-
     text-decoration: none;
-
     color: #00ff88;
-
     border: 1px solid rgba(0,255,136,.4);
-
     background: rgba(0,255,136,.03);
-
     text-align: center;
-
     font-weight: bold;
-
     transition: .3s;
 }
 
@@ -413,18 +327,11 @@ p {
 
 .username {
     display: block;
-
     margin-top: 5px;
-
     font-size: 13px;
-
     opacity: .7;
     font-weight: normal;
 }
-
-/* =========================
-   FORMULÁRIO
-========================= */
 
 .form {
     display: grid;
@@ -443,19 +350,12 @@ label {
 input,
 textarea {
     width: 100%;
-
     padding: 14px;
-
     border-radius: 10px;
-
     border: 1px solid #34404c;
-
     background: #0b121b;
-
     color: white;
-
     outline: none;
-
     font-size: 15px;
 }
 
@@ -467,53 +367,34 @@ textarea {
 input:focus,
 textarea:focus {
     border-color: #00ff88;
-
     box-shadow:
         0 0 0 3px rgba(0,255,136,.08);
 }
 
 .send {
     padding: 15px;
-
     border: none;
-
     border-radius: 10px;
-
     background: #00ff88;
-
     color: #03100a;
-
     font-size: 16px;
-
     font-weight: bold;
-
     cursor: pointer;
-
     transition: .3s;
 }
 
 .send:hover {
     transform: translateY(-3px);
-
     box-shadow:
         0 10px 30px rgba(0,255,136,.2);
 }
 
-/* =========================
-   CONTADOR
-========================= */
-
 .counter {
     margin-top: 35px;
-
     text-align: center;
-
     padding: 25px;
-
     border-radius: 18px;
-
     background: rgba(0,0,0,.25);
-
     border: 1px solid rgba(0,255,136,.15);
 }
 
@@ -523,15 +404,10 @@ textarea:focus {
 
 #visitorCount {
     margin: 8px 0;
-
     font-size: 42px;
-
     color: #00ff88;
-
     font-weight: bold;
-
     letter-spacing: 5px;
-
     text-shadow:
         0 0 15px rgba(0,255,136,.4);
 }
@@ -541,17 +417,10 @@ textarea:focus {
     font-size: 12px;
 }
 
-/* =========================
-   FOOTER
-========================= */
-
 footer {
     margin-top: 40px;
-
     text-align: center;
-
     color: #73828e;
-
     line-height: 1.8;
 }
 
@@ -559,10 +428,6 @@ footer {
     color: #00ff88;
     text-decoration: none;
 }
-
-/* =========================
-   RESPONSIVO
-========================= */
 
 @media(max-width:600px) {
 
@@ -606,10 +471,6 @@ footer {
 
 <div class="card" id="top">
 
-<!-- =========================
-     CABEÇALHO
-========================= -->
-
 <header>
 
     <div class="photo-container">
@@ -640,10 +501,6 @@ footer {
 </header>
 
 
-<!-- =========================
-     SOBRE MIM
-========================= -->
-
 <section>
 
 <h2>👨‍💻 Sobre Mim</h2>
@@ -667,10 +524,6 @@ e a minha equipa favorita é
 </section>
 
 
-<!-- =========================
-     BARCELONA
-========================= -->
-
 <section>
 
 <h2>🔵🔴 O Meu Clube do Coração</h2>
@@ -681,105 +534,38 @@ Consulta algumas páginas oficiais do FC Barcelona:
 
 <div class="barca-grid">
 
-<a
-href="https://www.fcbarcelona.com/en/club/identitat/escut"
-target="_blank"
-class="barca-card"
->
-
-<div class="barca-icon">
-🛡️
-</div>
-
-<h3>
-Emblema do Barça
-</h3>
-
-<p>
-Ver o emblema oficial
-</p>
-
+<a href="https://www.fcbarcelona.com/en/club/identitat/escut" target="_blank" class="barca-card">
+<div class="barca-icon">🛡️</div>
+<h3>Emblema do Barça</h3>
+<p>Ver o emblema oficial</p>
 </a>
 
-
-<a
-href="https://www.fcbarcelona.com/en/club/stadium"
-target="_blank"
-class="barca-card"
->
-
-<div class="barca-icon">
-🏟️
-</div>
-
-<h3>
-Estádio
-</h3>
-
-<p>
-Conhecer o estádio
-</p>
-
+<a href="https://www.fcbarcelona.com/en/club/stadium" target="_blank" class="barca-card">
+<div class="barca-icon">🏟️</div>
+<h3>Estádio</h3>
+<p>Conhecer o estádio</p>
 </a>
 
-
-<a
-href="https://www.fcbarcelona.com/en/club/galleries"
-target="_blank"
-class="barca-card"
->
-
-<div class="barca-icon">
-📸
-</div>
-
-<h3>
-Galeria
-</h3>
-
-<p>
-Ver fotografias oficiais
-</p>
-
+<a href="https://www.fcbarcelona.com/en/club/galleries" target="_blank" class="barca-card">
+<div class="barca-icon">📸</div>
+<h3>Galeria</h3>
+<p>Ver fotografias oficiais</p>
 </a>
 
-
-<a
-href="https://www.fcbarcelona.com/en"
-target="_blank"
-class="barca-card"
->
-
-<div class="barca-icon">
-🔵🔴
-</div>
-
-<h3>
-FC Barcelona
-</h3>
-
-<p>
-Visitar o site oficial
-</p>
-
+<a href="https://www.fcbarcelona.com/en" target="_blank" class="barca-card">
+<div class="barca-icon">🔵🔴</div>
+<h3>FC Barcelona</h3>
+<p>Visitar o site oficial</p>
 </a>
 
 </div>
 
-<a
-href="https://www.fcbarcelona.com/en"
-target="_blank"
-class="official"
->
+<a href="https://www.fcbarcelona.com/en" target="_blank" class="official">
 🌐 Visitar o Site Oficial do FC Barcelona
 </a>
 
 </section>
 
-
-<!-- =========================
-     OBJETIVOS
-========================= -->
 
 <section>
 
@@ -787,38 +573,17 @@ class="official"
 
 <ul class="goals">
 
-<li>
-Dominar o Desenvolvimento Web.
-</li>
-
-<li>
-Criar projetos interativos e modernos.
-</li>
-
-<li>
-Aprender JavaScript.
-</li>
-
-<li>
-Criar os meus próprios softwares.
-</li>
-
-<li>
-Melhorar cada vez mais na programação.
-</li>
-
-<li>
-Partilhar a minha evolução.
-</li>
+<li>Dominar o Desenvolvimento Web.</li>
+<li>Criar projetos interativos e modernos.</li>
+<li>Aprender JavaScript.</li>
+<li>Criar os meus próprios softwares.</li>
+<li>Melhorar cada vez mais na programação.</li>
+<li>Partilhar a minha evolução.</li>
 
 </ul>
 
 </section>
 
-
-<!-- =========================
-     MÚSICA
-========================= -->
 
 <section>
 
@@ -830,19 +595,11 @@ Música para acompanhar os meus estudos e projetos:
 
 <div class="music">
 
-<a
-href="https://www.youtube.com/results?search_query=lofi"
-target="_blank"
-class="lofi"
->
+<a href="https://www.youtube.com/results?search_query=lofi" target="_blank" class="lofi">
 🎧 Lofi
 </a>
 
-<a
-href="https://www.youtube.com/results?search_query=Coldplay"
-target="_blank"
-class="coldplay"
->
+<a href="https://www.youtube.com/results?search_query=Coldplay" target="_blank" class="coldplay">
 🎵 Coldplay
 </a>
 
@@ -851,64 +608,30 @@ class="coldplay"
 </section>
 
 
-<!-- =========================
-     REDES SOCIAIS
-========================= -->
-
 <section>
 
 <h2>📱 As Minhas Redes e Contactos</h2>
 
 <div class="social">
 
-<a
-href="https://www.instagram.com/fortunatovela10/"
-target="_blank"
->
+<a href="https://www.instagram.com/fortunatovela10/" target="_blank">
 📸 Instagram
-
-<span class="username">
-@fortunatovela10
-</span>
-
+<span class="username">@fortunatovela10</span>
 </a>
 
-
-<a
-href="https://github.com/fortunatovela10-hash"
-target="_blank"
->
+<a href="https://github.com/fortunatovela10-hash" target="_blank">
 💻 GitHub
-
-<span class="username">
-fortunatovela10-hash
-</span>
-
+<span class="username">fortunatovela10-hash</span>
 </a>
 
-
-<a
-href="https://www.youtube.com/@Fortunatovela-f4t"
-target="_blank"
->
+<a href="https://www.youtube.com/@Fortunatovela-f4t" target="_blank">
 ▶️ YouTube
-
-<span class="username">
-@Fortunatovela-f4t
-</span>
-
+<span class="username">@Fortunatovela-f4t</span>
 </a>
 
-
-<a
-href="mailto:fortunatovela10@gmail.com"
->
+<a href="mailto:fortunatovela10@gmail.com">
 ✉️ E-mail
-
-<span class="username">
-fortunatovela10@gmail.com
-</span>
-
+<span class="username">fortunatovela10@gmail.com</span>
 </a>
 
 </div>
@@ -917,7 +640,7 @@ fortunatovela10@gmail.com
 
 
 <!-- =========================
-     FORMULÁRIO
+     FORMULÁRIO COM FORMSPREE
 ========================= -->
 
 <section>
@@ -925,8 +648,10 @@ fortunatovela10@gmail.com
 <h2>💬 Deixe uma Mensagem</h2>
 
 <form
-class="form"
-onsubmit="sendMessage(event)"
+    class="form"
+    action="https://formspree.io/f/xbglddza"
+    method="POST"
+    id="contact-form"
 >
 
 <div class="form-group">
@@ -936,10 +661,11 @@ Nome
 </label>
 
 <input
-type="text"
-id="name"
-placeholder="O seu nome..."
-required
+    type="text"
+    id="name"
+    name="name"
+    placeholder="O seu nome..."
+    required
 >
 
 </div>
@@ -952,10 +678,11 @@ E-mail
 </label>
 
 <input
-type="email"
-id="email"
-placeholder="O seu e-mail..."
-required
+    type="email"
+    id="email"
+    name="email"
+    placeholder="O seu e-mail..."
+    required
 >
 
 </div>
@@ -968,17 +695,25 @@ Mensagem
 </label>
 
 <textarea
-id="message"
-placeholder="Escreva a sua mensagem..."
-required
+    id="message"
+    name="message"
+    placeholder="Escreva a sua mensagem..."
+    required
 ></textarea>
 
 </div>
 
 
+<input
+    type="hidden"
+    name="subject"
+    value="Nova mensagem do Perfil do Fortunato"
+>
+
+
 <button
-type="submit"
-class="send"
+    type="submit"
+    class="send"
 >
 🚀 Enviar Mensagem
 </button>
@@ -987,10 +722,6 @@ class="send"
 
 </section>
 
-
-<!-- =========================
-     CONTADOR
-========================= -->
 
 <div class="counter">
 
@@ -1009,10 +740,6 @@ Contador guardado neste navegador.
 </div>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
 © 2026 Fortunato
@@ -1023,10 +750,7 @@ Contador guardado neste navegador.
 
 <br><br>
 
-<a
-href="#top"
-class="top"
->
+<a href="#top" class="top">
 ↑ Voltar ao topo
 </a>
 
@@ -1039,18 +763,11 @@ class="top"
 
 <script>
 
-/* =========================
-   TEXTO DIGITADO
-========================= */
-
 const phrases = [
 
     "Estudante & Futuro Desenvolvedor Web",
-
     "Criador de projetos digitais",
-
     "A aprender HTML, CSS & JavaScript",
-
     "Apaixonado por tecnologia"
 
 ];
@@ -1068,14 +785,12 @@ function typeWriter() {
     const phrase =
     phrases[phraseIndex];
 
-
     if (!deleting) {
 
         typingText.textContent =
         phrase.substring(0, letterIndex + 1);
 
         letterIndex++;
-
 
         if (letterIndex === phrase.length) {
 
@@ -1096,7 +811,6 @@ function typeWriter() {
         phrase.substring(0, letterIndex - 1);
 
         letterIndex--;
-
 
         if (letterIndex === 0) {
 
@@ -1131,7 +845,6 @@ const counterKey =
 let visits =
 Number(localStorage.getItem(counterKey) || 0);
 
-
 if (
 sessionStorage.getItem("visit_registered")
 !== "yes"
@@ -1150,32 +863,10 @@ sessionStorage.getItem("visit_registered")
     );
 }
 
-
 document.getElementById(
     "visitorCount"
 ).textContent =
 String(visits).padStart(6, "0");
-
-
-/* =========================
-   FORMULÁRIO
-========================= */
-
-function sendMessage(event) {
-
-    event.preventDefault();
-
-    const name =
-    document.getElementById("name").value;
-
-    alert(
-        "Obrigado pela mensagem, "
-        + name
-        + "! 🚀"
-    );
-
-    event.target.reset();
-}
 
 
 /* =========================
@@ -1219,7 +910,6 @@ function createParticles() {
         )
     );
 
-
     particles =
     Array.from(
         { length: amount },
@@ -1254,7 +944,6 @@ function animateParticles() {
         height
     );
 
-
     particles.forEach(
         particle => {
 
@@ -1264,7 +953,6 @@ function animateParticles() {
             particle.y +=
             particle.vy;
 
-
             if (
                 particle.x < -10
             ) {
@@ -1272,13 +960,11 @@ function animateParticles() {
                 width + 10;
             }
 
-
             if (
                 particle.x > width + 10
             ) {
                 particle.x = -10;
             }
-
 
             if (
                 particle.y < -10
@@ -1287,13 +973,11 @@ function animateParticles() {
                 height + 10;
             }
 
-
             if (
                 particle.y > height + 10
             ) {
                 particle.y = -10;
             }
-
 
             ctx.beginPath();
 
@@ -1332,20 +1016,17 @@ function animateParticles() {
             const b =
             particles[j];
 
-
             const dx =
             a.x - b.x;
 
             const dy =
             a.y - b.y;
 
-
             const distance =
             Math.sqrt(
                 dx * dx +
                 dy * dy
             );
-
 
             if (distance < 120) {
 
@@ -1371,7 +1052,6 @@ function animateParticles() {
         }
     }
 
-
     requestAnimationFrame(
         animateParticles
     );
@@ -1383,7 +1063,6 @@ window.addEventListener(
     resizeCanvas
 );
 
-
 resizeCanvas();
 
 animateParticles();
@@ -1392,3 +1071,4 @@ animateParticles();
 
 </body>
 </html>
+```
